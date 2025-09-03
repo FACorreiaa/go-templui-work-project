@@ -1,0 +1,147 @@
+package pages
+
+import (
+	"github.com/FACorreiaa/go-templui/app/models"
+)
+
+type ErrorPageProps struct {
+	Title       string
+	Code        string
+	Message     string
+	Description string
+	ShowHome    bool
+	ShowBack    bool
+}
+
+templ ErrorPage(props ErrorPageProps) {
+	@LayoutPage(models.LayoutTempl{
+		Title: props.Title,
+		Nav: models.Navigation{
+			Items: []models.NavItem{
+				{Name: "Home", URL: "/"},
+				{Name: "Companies", URL: "/companies"},
+				{Name: "Investors", URL: "/investors"},
+				{Name: "People", URL: "/people"},
+			},
+		},
+		ActiveNav: "",
+		Content: ErrorContent(props),
+	})
+}
+
+templ ErrorContent(props ErrorPageProps) {
+	<div class="min-h-screen bg-background flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-md w-full text-center space-y-8">
+			<div class="space-y-6">
+				<div class="flex justify-center mb-6">
+					<div class="w-20 h-20 bg-destructive/10 rounded-full flex items-center justify-center">
+						<svg class="w-10 h-10 text-destructive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+						</svg>
+					</div>
+				</div>
+
+				<div class="space-y-4">
+					if props.Code != "" {
+						<div class="text-6xl sm:text-7xl font-bold text-primary">
+							{ props.Code }
+						</div>
+					}
+					
+					<h1 class="text-2xl sm:text-3xl font-bold text-foreground">
+						{ props.Message }
+					</h1>
+					
+					if props.Description != "" {
+						<p class="text-lg text-muted-foreground max-w-lg mx-auto">
+							{ props.Description }
+						</p>
+					}
+				</div>
+
+				<div class="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+					if props.ShowHome {
+						<a 
+							href="/" 
+							class="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-medium transition-colors inline-flex items-center justify-center"
+						>
+							<svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+							</svg>
+							Go home
+						</a>
+					}
+					
+					if props.ShowBack {
+						<button 
+							onclick="window.history.back()"
+							class="border border-border hover:bg-secondary text-foreground px-6 py-3 rounded-lg font-medium transition-colors inline-flex items-center justify-center"
+						>
+							<svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+							</svg>
+							Go back
+						</button>
+					}
+				</div>
+
+				// Additional help section
+				<div class="pt-8 border-t border-border">
+					<h3 class="text-sm font-medium text-foreground mb-3">Need help?</h3>
+					<div class="flex flex-col sm:flex-row gap-3 justify-center text-sm">
+						<a href="/support" class="text-primary hover:text-primary/80 transition-colors">Contact support</a>
+						<span class="hidden sm:inline text-muted-foreground">•</span>
+						<a href="/status" class="text-primary hover:text-primary/80 transition-colors">System status</a>
+						<span class="hidden sm:inline text-muted-foreground">•</span>
+						<a href="/docs" class="text-primary hover:text-primary/80 transition-colors">Documentation</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+}
+
+// Common error pages
+templ Error404Page() {
+	@ErrorPage(ErrorPageProps{
+		Title:       "Page Not Found",
+		Code:        "404",
+		Message:     "Page not found",
+		Description: "The page you're looking for doesn't exist or has been moved.",
+		ShowHome:    true,
+		ShowBack:    true,
+	})
+}
+
+templ Error500Page() {
+	@ErrorPage(ErrorPageProps{
+		Title:       "Internal Server Error",
+		Code:        "500",
+		Message:     "Something went wrong",
+		Description: "We're experiencing technical difficulties. Please try again in a few moments.",
+		ShowHome:    true,
+		ShowBack:    false,
+	})
+}
+
+templ Error403Page() {
+	@ErrorPage(ErrorPageProps{
+		Title:       "Access Forbidden",
+		Code:        "403",
+		Message:     "Access denied",
+		Description: "You don't have permission to access this resource.",
+		ShowHome:    true,
+		ShowBack:    true,
+	})
+}
+
+templ ErrorAuthPage() {
+	@ErrorPage(ErrorPageProps{
+		Title:       "Authentication Required",
+		Code:        "401",
+		Message:     "Authentication required",
+		Description: "Please sign in to access this page.",
+		ShowHome:    false,
+		ShowBack:    false,
+	})
+}

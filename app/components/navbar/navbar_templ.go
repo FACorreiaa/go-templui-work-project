@@ -41,7 +41,7 @@ func Navbar(props Props) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		var templ_7745c5c3_Var2 = []any{utils.TwMerge("sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60", props.Class)}
+		var templ_7745c5c3_Var2 = []any{utils.TwMerge("sticky top-0 z-50 w-full border-b border-border bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90 shadow-sm", props.Class)}
 		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var2...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
@@ -59,17 +59,17 @@ func Navbar(props Props) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "\"><div class=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\"><div class=\"flex justify-between items-center h-16\"><div class=\"flex-shrink-0\"><a href=\"/\" class=\"flex items-center space-x-2\"><div class=\"w-8 h-8 bg-blue-600 rounded-md flex items-center justify-center\"><span class=\"text-white font-bold text-lg\">T</span></div><span class=\"font-bold text-xl text-foreground\">TemplUI</span></a></div><div class=\"hidden md:block\"><div class=\"ml-10 flex items-baseline space-x-8\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "\"><div class=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\"><div class=\"flex justify-between items-center h-16\"><div class=\"flex-shrink-0\"><a href=\"/\" class=\"flex items-center space-x-2\"><div class=\"w-8 h-8 bg-primary rounded-md flex items-center justify-center\"><span class=\"text-white font-bold text-lg\">K</span></div><span class=\"font-bold text-xl text-foreground\">Tiger</span></a></div><div class=\"hidden lg:block\"><div class=\"flex items-center space-x-8\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, item := range props.Nav.Items {
 			var templ_7745c5c3_Var4 = []any{utils.TwMerge(
-				"px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200",
+				"px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-primary",
 				utils.IfElse(
 					props.ActiveNav == item.Name,
-					"text-blue-600 bg-blue-50 dark:bg-blue-900/20 dark:text-blue-400",
-					"text-muted-foreground hover:text-foreground hover:bg-accent",
+					"text-primary font-semibold",
+					"text-muted-foreground",
 				),
 			)}
 			templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var4...)
@@ -120,19 +120,19 @@ func Navbar(props Props) templ.Component {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "</div></div><div class=\"hidden md:flex items-center space-x-4\"><button id=\"theme-toggle\" class=\"p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent transition-colors\" onclick=\"toggleTheme()\"><svg class=\"w-5 h-5 dark:hidden\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z\"></path></svg> <svg class=\"w-5 h-5 hidden dark:block\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z\"></path></svg></button> ")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, "</div></div><div class=\"hidden lg:flex items-center space-x-3\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		if props.User != nil {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 8, " <div class=\"relative\" x-data=\"{ open: false }\"><button @click=\"open = !open\" class=\"flex items-center space-x-2 text-sm font-medium text-muted-foreground hover:text-foreground\"><div class=\"w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center\"><span class=\"text-white text-sm font-medium\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 8, " <div class=\"relative\" x-data=\"{ open: false }\"><button @click=\"open = !open\" class=\"flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium text-foreground hover:bg-secondary transition-colors\"><div class=\"w-8 h-8 bg-primary rounded-full flex items-center justify-center\"><span class=\"text-white text-sm font-semibold\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var8 string
 			templ_7745c5c3_Var8, templ_7745c5c3_Err = templ.JoinStringErrs(string(props.User.Name[0]))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/navbar/navbar.templ`, Line: 75, Col: 38}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/navbar/navbar.templ`, Line: 61, Col: 38}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var8))
 			if templ_7745c5c3_Err != nil {
@@ -145,33 +145,33 @@ func Navbar(props Props) templ.Component {
 			var templ_7745c5c3_Var9 string
 			templ_7745c5c3_Var9, templ_7745c5c3_Err = templ.JoinStringErrs(props.User.Name)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/navbar/navbar.templ`, Line: 78, Col: 31}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/navbar/navbar.templ`, Line: 64, Col: 31}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var9))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 10, "</span></button><div x-show=\"open\" @click.away=\"open = false\" x-transition:enter=\"transition ease-out duration-100\" x-transition:enter-start=\"transform opacity-0 scale-95\" x-transition:enter-end=\"transform opacity-100 scale-100\" x-transition:leave=\"transition ease-in duration-75\" x-transition:leave-start=\"transform opacity-100 scale-100\" x-transition:leave-end=\"transform opacity-0 scale-95\" class=\"absolute right-0 mt-2 w-48 bg-popover border border-border rounded-md shadow-lg py-1 z-50\"><a href=\"/profile\" class=\"block px-4 py-2 text-sm text-popover-foreground hover:bg-accent\">Profile</a> <a href=\"/settings\" class=\"block px-4 py-2 text-sm text-popover-foreground hover:bg-accent\">Settings</a><hr class=\"my-1 border-border\"><a href=\"/logout\" class=\"block px-4 py-2 text-sm text-popover-foreground hover:bg-accent\">Sign out</a></div></div>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 10, "</span> <svg class=\"w-4 h-4 text-muted-foreground\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19 9l-7 7-7-7\"></path></svg></button><div x-show=\"open\" @click.away=\"open = false\" x-transition:enter=\"transition ease-out duration-100\" x-transition:enter-start=\"transform opacity-0 scale-95\" x-transition:enter-end=\"transform opacity-100 scale-100\" x-transition:leave=\"transition ease-in duration-75\" x-transition:leave-start=\"transform opacity-100 scale-100\" x-transition:leave-end=\"transform opacity-0 scale-95\" class=\"absolute right-0 mt-2 w-48 bg-white border border-border rounded-lg shadow-lg py-2 z-50\"><a href=\"/profile\" class=\"block px-4 py-2 text-sm text-foreground hover:bg-secondary\">Profile</a> <a href=\"/change-password\" class=\"block px-4 py-2 text-sm text-foreground hover:bg-secondary\">Change Password</a> <a href=\"/settings\" class=\"block px-4 py-2 text-sm text-foreground hover:bg-secondary\">Settings</a><hr class=\"my-1 border-border\"><a href=\"/logout\" class=\"block px-4 py-2 text-sm text-foreground hover:bg-secondary\">Sign out</a></div></div>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		} else {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 11, "<a href=\"/login\" class=\"bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors\">Sign in</a>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 11, "<a href=\"/register\" class=\"text-sm font-medium text-muted-foreground hover:text-foreground px-3 py-2 transition-colors\">Sign up</a> <a href=\"/login\" class=\"bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm\">Log in</a>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 12, "</div><div class=\"md:hidden\"><button id=\"mobile-menu-button\" class=\"p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent\" onclick=\"toggleMobileMenu()\"><svg class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M4 6h16M4 12h16M4 18h16\"></path></svg></button></div></div></div><div id=\"mobile-menu\" class=\"md:hidden hidden\"><div class=\"px-2 pt-2 pb-3 space-y-1 bg-background border-t border-border\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 12, "</div><div class=\"lg:hidden\"><button id=\"mobile-menu-button\" class=\"p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors\" onclick=\"toggleMobileMenu()\"><svg class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M4 6h16M4 12h16M4 18h16\"></path></svg></button></div></div></div><div id=\"mobile-menu\" class=\"lg:hidden hidden\"><div class=\"px-4 pt-2 pb-3 space-y-1 bg-white border-t border-border shadow-lg\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, item := range props.Nav.Items {
 			var templ_7745c5c3_Var10 = []any{utils.TwMerge(
-				"block px-3 py-2 rounded-md text-base font-medium transition-colors",
+				"block px-3 py-3 text-base font-medium transition-colors border-b border-border/50",
 				utils.IfElse(
 					props.ActiveNav == item.Name,
-					"text-blue-600 bg-blue-50 dark:bg-blue-900/20 dark:text-blue-400",
-					"text-muted-foreground hover:text-foreground hover:bg-accent",
+					"text-primary font-semibold",
+					"text-muted-foreground hover:text-foreground",
 				),
 			)}
 			templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var10...)
@@ -185,7 +185,7 @@ func Navbar(props Props) templ.Component {
 			var templ_7745c5c3_Var11 templ.SafeURL
 			templ_7745c5c3_Var11, templ_7745c5c3_Err = templ.JoinURLErrs(templ.SafeURL(item.URL))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/navbar/navbar.templ`, Line: 128, Col: 36}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/navbar/navbar.templ`, Line: 124, Col: 36}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var11))
 			if templ_7745c5c3_Err != nil {
@@ -211,7 +211,7 @@ func Navbar(props Props) templ.Component {
 			var templ_7745c5c3_Var13 string
 			templ_7745c5c3_Var13, templ_7745c5c3_Err = templ.JoinStringErrs(item.Name)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/navbar/navbar.templ`, Line: 138, Col: 17}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/navbar/navbar.templ`, Line: 134, Col: 17}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var13))
 			if templ_7745c5c3_Err != nil {
@@ -227,14 +227,14 @@ func Navbar(props Props) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		if props.User != nil {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 18, "<div class=\"px-3 py-2\"><div class=\"text-base font-medium text-foreground\">")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 18, "<div class=\"px-3 py-2\"><div class=\"text-base font-semibold text-foreground\">")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var14 string
 			templ_7745c5c3_Var14, templ_7745c5c3_Err = templ.JoinStringErrs(props.User.Name)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/navbar/navbar.templ`, Line: 145, Col: 75}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/navbar/navbar.templ`, Line: 141, Col: 77}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var14))
 			if templ_7745c5c3_Err != nil {
@@ -247,23 +247,23 @@ func Navbar(props Props) templ.Component {
 			var templ_7745c5c3_Var15 string
 			templ_7745c5c3_Var15, templ_7745c5c3_Err = templ.JoinStringErrs(props.User.Email)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/navbar/navbar.templ`, Line: 146, Col: 68}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `app/components/navbar/navbar.templ`, Line: 142, Col: 68}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var15))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 20, "</div></div><a href=\"/profile\" class=\"block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-accent\">Profile</a> <a href=\"/settings\" class=\"block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-accent\">Settings</a> <a href=\"/logout\" class=\"block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-accent\">Sign out</a>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 20, "</div></div><a href=\"/profile\" class=\"block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground\">Profile</a> <a href=\"/change-password\" class=\"block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground\">Change Password</a> <a href=\"/settings\" class=\"block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground\">Settings</a> <a href=\"/logout\" class=\"block px-3 py-2 text-base font-medium text-muted-foreground hover:text-foreground\">Sign out</a>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		} else {
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 21, "<a href=\"/login\" class=\"block px-3 py-2 text-base font-medium bg-blue-600 text-white rounded-md mx-3\">Sign in</a>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 21, "<div class=\"px-3 space-y-2\"><a href=\"/register\" class=\"block w-full text-center bg-secondary text-foreground px-4 py-2 rounded-lg text-sm font-medium\">Sign up</a> <a href=\"/login\" class=\"block w-full text-center bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium\">Log in</a></div>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 22, "</div></div></div></nav><script>\n\t\tfunction toggleTheme() {\n\t\t\tconst html = document.documentElement;\n\t\t\tconst isDark = html.classList.contains('dark');\n\t\t\t\n\t\t\tif (isDark) {\n\t\t\t\thtml.classList.remove('dark');\n\t\t\t\tlocalStorage.setItem('theme', 'light');\n\t\t\t} else {\n\t\t\t\thtml.classList.add('dark');\n\t\t\t\tlocalStorage.setItem('theme', 'dark');\n\t\t\t}\n\t\t}\n\n\t\tfunction toggleMobileMenu() {\n\t\t\tconst menu = document.getElementById('mobile-menu');\n\t\t\tmenu.classList.toggle('hidden');\n\t\t}\n\n\t\t// Initialize theme on page load\n\t\tdocument.addEventListener('DOMContentLoaded', function() {\n\t\t\tconst theme = localStorage.getItem('theme') || 'light';\n\t\t\tif (theme === 'dark') {\n\t\t\t\tdocument.documentElement.classList.add('dark');\n\t\t\t}\n\t\t});\n\t</script>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 22, "</div></div></div></nav><script>\n\t\tfunction toggleMobileMenu() {\n\t\t\tconst menu = document.getElementById('mobile-menu');\n\t\t\tmenu.classList.toggle('hidden');\n\t\t}\n\t</script>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

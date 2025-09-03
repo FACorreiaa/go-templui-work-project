@@ -91,3 +91,5 @@ config.yaml
 *.db
 *.sqlite
 *.sqlite3
+business
+startup

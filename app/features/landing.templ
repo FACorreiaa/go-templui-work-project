@@ -1,181 +1,209 @@
 package features
 
 templ LandingContent() {
-	// Hero Section
-	<section class="py-20 px-4 sm:px-6 lg:px-8">
-		<div class="max-w-7xl mx-auto text-center">
-			<div class="space-y-8">
-				<div class="space-y-4">
-					<h1 class="text-4xl sm:text-6xl font-bold text-foreground">
-						Build Modern Web Apps with
-						<span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-							Go & Templ
-						</span>
+	// Hero Section - Crunchbase style
+	<section class="bg-background py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+		<div class="max-w-7xl mx-auto">
+			<div class="text-center space-y-8">
+				<div class="space-y-6">
+					<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+						Discover next-gen companies 
+						<br/>
+						<span class="text-primary">you should know about</span>
 					</h1>
-					<p class="text-xl text-muted-foreground max-w-3xl mx-auto">
-						Create fast, reliable, and beautiful user interfaces using Go, Templ, TemplUI and Tailwind CSS.
-						The perfect stack for modern web development.
+					<p class="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+						Get insights into company funding, acquisitions, leadership changes, and more. 
+						Over 5 million companies. 45,000 investors. Millions of startup founders.
 					</p>
 				</div>
 				
-				<div class="flex flex-col sm:flex-row gap-4 justify-center">
-					<a 
-						href="/docs" 
-						class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors inline-flex items-center justify-center"
-					>
-						Get Started
-						<svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</a>
-					<a 
-						href="/examples" 
-						class="border border-border hover:bg-accent text-foreground px-8 py-3 rounded-lg font-medium transition-colors inline-flex items-center justify-center"
-					>
-						View Examples
-					</a>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+					<div class="relative flex-1">
+						<input 
+							type="text" 
+							placeholder="Search for a company..."
+							class="w-full px-4 py-3 border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+						/>
+					</div>
+					<button class="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-medium transition-colors whitespace-nowrap">
+						Search
+					</button>
+				</div>
+
+				// Trust indicators
+				<div class="pt-8">
+					<p class="text-sm text-muted-foreground mb-6">Trusted by teams at</p>
+					<div class="flex flex-wrap justify-center items-center gap-8 opacity-60">
+						<div class="text-lg font-semibold text-muted-foreground">Microsoft</div>
+						<div class="text-lg font-semibold text-muted-foreground">Salesforce</div>
+						<div class="text-lg font-semibold text-muted-foreground">Meta</div>
+						<div class="text-lg font-semibold text-muted-foreground">Google</div>
+						<div class="text-lg font-semibold text-muted-foreground">Netflix</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	// Features Section
-	<section class="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+	// Features Section - Crunchbase style
+	<section class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
 		<div class="max-w-7xl mx-auto">
 			<div class="text-center mb-16">
 				<h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-					Why Choose Our Stack?
+					The complete picture of innovation
 				</h2>
-				<p class="text-xl text-muted-foreground max-w-2xl mx-auto">
-					The perfect combination of performance, developer experience, and modern web standards.
+				<p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+					From startup to IPO, get comprehensive insights into the companies, 
+					people, and trends shaping tomorrow.
 				</p>
 			</div>
 
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 				// Feature 1
-				<div class="bg-card border border-border rounded-xl p-8 text-center">
-					<div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-						<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+				<div class="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
+					<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+						<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
 						</svg>
 					</div>
-					<h3 class="text-xl font-semibold text-card-foreground mb-2">Lightning Fast</h3>
-					<p class="text-muted-foreground">
-						Go's exceptional performance combined with Templ's efficient templating 
-						delivers blazing fast web applications.
+					<h3 class="text-lg font-semibold text-card-foreground mb-3">Company Intelligence</h3>
+					<p class="text-muted-foreground text-sm leading-relaxed">
+						Access detailed profiles, funding history, key personnel, and business insights for millions of companies worldwide.
 					</p>
 				</div>
 
 				// Feature 2
-				<div class="bg-card border border-border rounded-xl p-8 text-center">
-					<div class="w-12 h-12 bg-green-100 dark:bg-green-900/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-						<svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+				<div class="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
+					<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+						<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
 						</svg>
 					</div>
-					<h3 class="text-xl font-semibold text-card-foreground mb-2">Type Safe</h3>
-					<p class="text-muted-foreground">
-						Full type safety from backend to frontend with Go's strong typing system 
-						and Templ's compile-time validation.
+					<h3 class="text-lg font-semibold text-card-foreground mb-3">People & Networks</h3>
+					<p class="text-muted-foreground text-sm leading-relaxed">
+						Discover key decision makers, track career moves, and understand the relationships that drive business.
 					</p>
 				</div>
 
 				// Feature 3
-				<div class="bg-card border border-border rounded-xl p-8 text-center">
-					<div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-						<svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
+				<div class="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
+					<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+						<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
 						</svg>
 					</div>
-					<h3 class="text-xl font-semibold text-card-foreground mb-2">Developer Experience</h3>
-					<p class="text-muted-foreground">
-						Beautiful developer experience with hot reload, excellent tooling, 
-						and seamless integration between all parts of the stack.
+					<h3 class="text-lg font-semibold text-card-foreground mb-3">Market Trends</h3>
+					<p class="text-muted-foreground text-sm leading-relaxed">
+						Track funding trends, emerging technologies, and market movements with real-time data and analytics.
+					</p>
+				</div>
+
+				// Feature 4
+				<div class="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
+					<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+						<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+						</svg>
+					</div>
+					<h3 class="text-lg font-semibold text-card-foreground mb-3">Investment Tracking</h3>
+					<p class="text-muted-foreground text-sm leading-relaxed">
+						Monitor funding rounds, valuations, and investor activity across all stages from seed to IPO.
+					</p>
+				</div>
+
+				// Feature 5
+				<div class="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
+					<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+						<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+						</svg>
+					</div>
+					<h3 class="text-lg font-semibold text-card-foreground mb-3">Advanced Search</h3>
+					<p class="text-muted-foreground text-sm leading-relaxed">
+						Use powerful filters to discover companies by location, industry, funding stage, technology, and more.
+					</p>
+				</div>
+
+				// Feature 6
+				<div class="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
+					<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+						<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5v-5zM4 1v5h5l-5-5zM9 12l2 2 4-4"></path>
+						</svg>
+					</div>
+					<h3 class="text-lg font-semibold text-card-foreground mb-3">Real-time Alerts</h3>
+					<p class="text-muted-foreground text-sm leading-relaxed">
+						Get notified about funding announcements, acquisitions, and key changes at companies you follow.
 					</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	// Technology Stack Section
-	<section class="py-20 px-4 sm:px-6 lg:px-8">
+	// Stats Section - Crunchbase style
+	<section class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
 		<div class="max-w-6xl mx-auto">
 			<div class="text-center mb-16">
 				<h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-					Modern Technology Stack
+					By the numbers
 				</h2>
-				<p class="text-xl text-muted-foreground">
-					Built with the latest and most reliable technologies.
+				<p class="text-lg text-muted-foreground">
+					The most comprehensive startup and investor database
 				</p>
 			</div>
 
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-				<div class="bg-card border border-border rounded-xl p-8 text-center">
-					<div class="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-						<span class="text-white font-bold text-2xl">Go</span>
-					</div>
-					<h3 class="text-xl font-semibold text-card-foreground mb-2">Go Backend</h3>
-					<p class="text-muted-foreground">
-						Fast, reliable, and efficient server-side processing with Go's exceptional performance.
-					</p>
+				<div class="text-center">
+					<div class="text-4xl sm:text-5xl font-bold text-primary mb-2">5M+</div>
+					<div class="text-lg font-medium text-foreground mb-1">Companies</div>
+					<div class="text-sm text-muted-foreground">Comprehensive company profiles</div>
 				</div>
-
-				<div class="bg-card border border-border rounded-xl p-8 text-center">
-					<div class="w-16 h-16 bg-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-						<span class="text-white font-bold text-lg">T</span>
-					</div>
-					<h3 class="text-xl font-semibold text-card-foreground mb-2">Templ Templates</h3>
-					<p class="text-muted-foreground">
-						Type-safe, compiled templates that integrate seamlessly with Go for better performance.
-					</p>
+				<div class="text-center">
+					<div class="text-4xl sm:text-5xl font-bold text-primary mb-2">45K+</div>
+					<div class="text-lg font-medium text-foreground mb-1">Investors</div>
+					<div class="text-sm text-muted-foreground">Active investor profiles</div>
 				</div>
-
-				<div class="bg-card border border-border rounded-xl p-8 text-center">
-					<div class="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-						<span class="text-white font-bold text-lg">CSS</span>
-					</div>
-					<h3 class="text-xl font-semibold text-card-foreground mb-2">Tailwind CSS</h3>
-					<p class="text-muted-foreground">
-						Utility-first CSS framework for rapidly building modern and responsive interfaces.
-					</p>
+				<div class="text-center">
+					<div class="text-4xl sm:text-5xl font-bold text-primary mb-2">$2T+</div>
+					<div class="text-lg font-medium text-foreground mb-1">Funding Tracked</div>
+					<div class="text-sm text-muted-foreground">Total funding data tracked</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	// CTA Section
-	<section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600">
+	// CTA Section - Crunchbase style
+	<section class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-primary">
 		<div class="max-w-4xl mx-auto text-center">
 			<div class="space-y-8">
 				<div class="space-y-4">
-					<h2 class="text-3xl sm:text-4xl font-bold text-white">
-						Ready to Build Something Amazing?
+					<h2 class="text-3xl sm:text-4xl font-bold text-primary-foreground">
+						Ready to unlock the power of data?
 					</h2>
-					<p class="text-xl text-blue-100">
-						Join thousands of developers building the future with Go, Templ, and Tailwind CSS.
+					<p class="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
+						Join millions of professionals who rely on our platform to discover opportunities, 
+						track competitors, and make informed business decisions.
 					</p>
 				</div>
 				
 				<div class="flex flex-col sm:flex-row gap-4 justify-center">
 					<a 
-						href="/docs" 
-						class="bg-white hover:bg-gray-100 text-blue-600 px-8 py-3 rounded-lg font-medium transition-colors inline-flex items-center justify-center"
+						href="/register" 
+						class="bg-white hover:bg-gray-100 text-primary px-8 py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center"
 					>
-						Start Building
-						<svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
+						Start your free trial
 					</a>
 					<a 
-						href="https://github.com" 
-						class="border border-white/20 hover:bg-white/10 text-white px-8 py-3 rounded-lg font-medium transition-colors inline-flex items-center justify-center"
+						href="/login" 
+						class="border border-primary-foreground/20 hover:bg-primary-foreground/10 text-primary-foreground px-8 py-3 rounded-lg font-medium transition-colors inline-flex items-center justify-center"
 					>
-						<svg class="mr-2 w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-							<path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-						</svg>
-						View on GitHub
+						Sign in
 					</a>
 				</div>
+
+				<p class="text-sm text-primary-foreground/60">
+					No credit card required. Start exploring in seconds.
+				</p>
 			</div>
 		</div>
 	</section>
